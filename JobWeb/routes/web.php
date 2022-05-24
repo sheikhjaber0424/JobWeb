@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\ListingModel;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use App\Models\ListingModel;
 Route::get('/', function () {
     return view('listings',[
         'header' => 'Latest Listings',
-        'listings' => ListingModel ::all()
+        'listings' => Listing ::all()
     ]);
 });
 
@@ -28,7 +29,7 @@ Route::get('/', function () {
 //Single Listing
 Route::get('/listings/{id}', function($id){
     return view('singleListing', [
-        'listing' => ListingModel::find($id)
+        'listing' => Listing::find($id)
     ]);
 });
 
