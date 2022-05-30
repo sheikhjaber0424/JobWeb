@@ -3,6 +3,7 @@
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ListingController;
 
 
 /*
@@ -18,21 +19,16 @@ use Illuminate\Support\Facades\Route;
 
 
 // All Listings
-Route::get('/', function () {
-    return view('listings',[
-        'header' => 'Latest Listings',
-        'listings' => Listing ::all()
-    ]);
-});
+Route::get('/',  [ListingController::class, 'index']  );
 
+
+
+
+//show Create form
+Route::get('/listings/create',  [ListingController::class, 'create']);
 
 //Single Listing
-Route::get('/listings/{id}', function($id){
-    return view('singleListing', [
-        'listing' => Listing::find($id)
-    ]);
-});
-
+Route::get('/listings/{id}',[ListingController::class,'show']);
 
 
 /*Route::get('/hello', function () {
