@@ -72,6 +72,10 @@
           @enderror
         </div>
   
+
+
+
+
         <div class="mb-6">
           <label for="logo" class="inline-block text-lg mb-2">
             Company Logo
@@ -83,6 +87,9 @@
           @enderror
         </div>
   
+
+
+
         <div class="mb-6">
           <label for="description" class="inline-block text-lg mb-2">
             Job Description
