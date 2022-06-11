@@ -3,6 +3,7 @@
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
 
 
@@ -38,10 +39,15 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 //update listing
 Route::put('listings/{listing}', [ListingController::class, 'update']);
 
+
+//delete listing
+Route::delete('listings/{listing}', [ListingController::class, 'destroy']);
+
 //Single Listing
 Route::get('/listings/{id}',[ListingController::class,'show']);
 
-
+//Show register/create form
+Route::get('/register',[UserController::class, 'create']);
 
 /*Route::get('/hello', function () {
     return response('<h1>Hello World</h1>')
