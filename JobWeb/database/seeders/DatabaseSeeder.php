@@ -38,8 +38,8 @@ class DatabaseSeeder extends Seeder
          ]);
          
          Listing::create([
-            'title' =>'Game Developer',
-            'tags' =>'Unity, 3D',         
+            'title' =>'Laravel Developer',
+            'tags' =>'Laravel, Vue.js',         
             'company' =>'Uni Industries',
             'location' =>'Las Vegas',
             'email' =>'Uni@gmail.com',
@@ -80,3 +80,4 @@ class DatabaseSeeder extends Seeder
    
     }
 }
+ 
